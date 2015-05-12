@@ -2,7 +2,7 @@
 galaxy_info:
   author: Dale-Kurt Murray
   company: dalekurtmurray.com
-  description: "Installs SearchBlox"
+  description: "Ansible role for SearchBlox"
   license: MIT
   min_ansible_version: 1.6.3
 
