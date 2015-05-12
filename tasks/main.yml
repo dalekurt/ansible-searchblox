@@ -1,0 +1,15 @@
+---
+  - name: Variables
+    include_vars: ../vars/main.yml
+
+  - name: Download Java
+    command: "wget -q -O {{searchblox_archive}} {{download_url}} creates={{searchblox_archive}}"
+
+  - name: Unpack archive
+    command: "tar -zxf {{searchblox_archive}} -C {{download_path}} creates={{searchblox_path}}"
+
+  - name: Fix ownership
+    file: state=directory path={{searchblox_path}} owner=root group=root recurse=yes
+
+  - name: Clean up
+    file: state=absent path={{searchblox_archive}}
